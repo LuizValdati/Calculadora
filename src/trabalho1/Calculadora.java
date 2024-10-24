@@ -39,17 +39,19 @@ public class Calculadora {
     void Calcular(){
         //PilhaGenerica atualop = pilhaOperadores;
         //PilhaGenerica atualre = pilhaReais;
-        if(pilhaOperadores.getQt() == 0)
+        if(pilhaOperadores.getQt() == 0){
             System.out.println("Não possui nenhum operador!");
-        if(pilhaReais.getQt() == 0)
+            return;}
+        if(pilhaReais.getQt() == 0){
             System.out.println("Não possui nenhum número!");
+            return;}
         
         if(pilhaReais.getQt() <= pilhaOperadores.getQt()){
             System.out.println("Faltam " + pilhaOperadores.getQt() + " números para realizar operação");
 			return;
         }
 		else{
-		if(pilhaOperadores.getQt() + 1 <= pilhaReais.getQt()){
+		if(pilhaOperadores.getQt() + 1 < pilhaReais.getQt()){
             int opfalta = pilhaReais.getQt() - 1;
 			System.out.println("Faltam " + opfalta + "operadores para realizar operação");
 			return;
