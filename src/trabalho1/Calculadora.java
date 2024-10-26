@@ -53,12 +53,12 @@ public class Calculadora {
 		else{
 		if(pilhaOperadores.getQt() + 1 < pilhaReais.getQt()){
             int opfalta = pilhaReais.getQt() - 1;
-			System.out.println("Faltam " + opfalta + "operadores para realizar operação");
+			System.out.println("Faltam " + opfalta + " operadores para realizar operação");
 			return;
         }
 		else{
 			float a, b = 0;
-        for(int i = 1; i != pilhaOperadores.getQt(); i++){
+            while (pilhaOperadores.getQt() > 0) {
 			a = pilhaReais.desempilha();
 			b = pilhaReais.desempilha();
 			switch(pilhaOperadores.desempilha()){

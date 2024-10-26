@@ -2,19 +2,19 @@ package trabalho1;
 
 public class ListaEncadeadaGenerica<Item> {
     
-    Nodo ultimo;
+    private Nodo<Item> ultimo;
 
-    private class Nodo{
+    private static class Nodo<Item>{
         Item dado;
-        Nodo ant;
+        Nodo<Item> ant;
     }
 
-    ListaEncadeadaGenerica(){
+    public ListaEncadeadaGenerica(){
         ultimo = null;
     }
 
-    void insereFinal(Item n){
-        Nodo novo = new Nodo();
+    public void insereFinal(Item n){
+        Nodo<Item> novo = new Nodo<>();
         novo.dado = n;
         
         if(ultimo == null){
@@ -28,7 +28,7 @@ public class ListaEncadeadaGenerica<Item> {
 
     }
 
-    Item removeFinal(){
+    public Item removeFinal(){
         if(ultimo != null){
             Item n = ultimo.dado;
             if(ultimo.ant == null){
@@ -44,8 +44,8 @@ public class ListaEncadeadaGenerica<Item> {
         }
     }
 
-    void imprimeLista(){
-        Nodo temp = ultimo;
+    public void imprimeLista(){
+        Nodo<Item> temp = ultimo;
         while(temp != null){
             System.out.print(temp.dado + "->");
             temp = temp.ant;
